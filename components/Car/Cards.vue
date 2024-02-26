@@ -1,5 +1,5 @@
 <script setup>
-import cars from '~/data/cars.json'
+const {cars} = useCars()
 </script>
 
 <template>
