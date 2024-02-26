@@ -1,5 +1,8 @@
-<script setup lang="ts">
-
+<script setup>
+const route = useRoute()
+useHead({
+  title: `${useSentenceCase(route.params.name)}`
+})
 </script>
 
 <template>

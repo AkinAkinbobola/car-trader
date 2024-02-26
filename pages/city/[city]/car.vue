@@ -1,5 +1,9 @@
 <script setup>
+const route = useRoute()
 
+useHead({
+  title: `${route.params.make ? useSentenceCase(route.params.make) : 'Cars'} in ${useSentenceCase(route.params.city)}`
+})
 </script>
 
 <template>
