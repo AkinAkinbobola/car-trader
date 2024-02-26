@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
-    City and Make
+  <div class="w-full">
+    <CarCard/>
   </div>
 </template>
