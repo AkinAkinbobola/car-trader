@@ -5,6 +5,7 @@ const {car} = defineProps(['car'])
 <template>
   <div
       class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
+      @click="navigateTo(`/car/${car.name}-${car.id}`)"
   >
     <div class="flex h-full">
       <img
