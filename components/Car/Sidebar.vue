@@ -13,6 +13,12 @@ const updateModal = (key) => {
 
 const onChangeLocation = () => {
   if(!city.value) return;
+  if(!isNaN(parseInt(city.value))) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: 'City cannot be a number'
+    })
+  }
   updateModal('location');
   navigateTo(`/city/${city.value}/car/${route.params.make}`);
   city.value = '';
