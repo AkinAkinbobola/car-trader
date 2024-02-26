@@ -8,6 +8,13 @@ const car = computed(() => {
   return cars.find(car => car.id === parseInt(route.params.id))
 })
 
+if (!car.value) {
+  throw createError({
+    statusCode: 404,
+    statusMessage: `Car with id of ${route.params.id} not found`
+  })
+}
+
 useHead({
   title: `${toTitleCase(route.params.name)}`
 })
