@@ -1,12 +1,15 @@
 <script setup>
+import heartFilled from '~/public/heartFilled.png'
+import heartOutline from '~/public/heartOutline.png'
 const {car} = defineProps(['car'])
 </script>
 
 <template>
   <div
-      class="shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
+      class="relative shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
       @click="navigateTo(`/car/${car.name}-${car.id}`)"
   >
+    <img :src="heartOutline" class="absolute w-7 right-5 top-2 z-20"/>
     <div class="flex h-full">
       <NuxtImg
           :src="car.url"
