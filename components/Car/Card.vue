@@ -1,5 +1,5 @@
-<script setup lang="ts">
-
+<script setup>
+const {car} = defineProps(['car'])
 </script>
 
 <template>
@@ -8,18 +8,18 @@
   >
     <div class="flex h-full">
       <img
-          src="https://carwow-uk-wp-3.imgix.net/Volvo-XC40-white-scaled.jpg"
+          :src="car.url"
           alt=""
           class="w-[300px] h-full"
       />
       <div class="p-4 flex flex-col">
         <div>
-          <h1 class="text-2xl text-blue-700">Volvo XC40</h1>
+          <h1 class="text-2xl text-blue-700">{{ car.name }}</h1>
           <p class="text-gray-700">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            {{ car.description }}
           </p>
         </div>
-        <h1 class="mt-auto text-xl">$39,555</h1>
+        <h1 class="mt-auto text-xl">${{ car.price }}</h1>
       </div>
     </div>
   </div>
