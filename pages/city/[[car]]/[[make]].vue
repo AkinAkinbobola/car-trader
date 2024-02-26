@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <CarHero />
+    City and Make
   </div>
 </template>
