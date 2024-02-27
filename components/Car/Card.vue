@@ -2,15 +2,15 @@
 import heartFilled from '~/public/heartFilled.png'
 import heartOutline from '~/public/heartOutline.png'
 
-const {car} = defineProps(['car'])
-const saved = useState(`saved-${car.id}`, () => false)
+const {car, saved} = defineProps(['car', 'saved'])
+const emit = defineEmits(['saveCar'])
 </script>
 
 <template>
   <div
       class="relative shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
   >
-    <img :src="saved ? heartFilled : heartOutline" class="absolute w-7 right-5 top-2 z-20" @click="saved = !saved"/>
+    <img :src="saved ? heartFilled : heartOutline" class="absolute w-7 right-5 top-2 z-20" @click="emit('saveCar', car.id)"/>
     <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)"
     >
       <NuxtImg
