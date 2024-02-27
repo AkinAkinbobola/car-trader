@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     modules: [
         '@nuxtjs/color-mode',
         '@nuxt/image',
+        '@vueuse/nuxt',
     ],
     colorMode: {
         classSuffix: ''
