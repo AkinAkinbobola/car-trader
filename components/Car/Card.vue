@@ -1,6 +1,6 @@
 <script setup>
-import heartFilled from '~/public/heartFilled.png'
-import heartOutline from '~/public/heartOutline.png'
+import heartFilled from '/heartFilled.png'
+import heartOutline from '/heartOutline.png'
 
 const {car, saved} = defineProps(['car', 'saved'])
 const emit = defineEmits(['saveCar'])

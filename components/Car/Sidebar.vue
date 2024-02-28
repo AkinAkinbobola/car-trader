@@ -1,5 +1,5 @@
 <script setup>
-const {makes} = useMakes();
+const {makes} = useData();
 const route = useRoute();
 const router = useRouter();
 const city = ref('');
