@@ -5,6 +5,7 @@ export default defineNuxtConfig({
         '@nuxtjs/color-mode',
         '@nuxt/image',
         '@vueuse/nuxt',
+        "@nuxtjs/supabase"
     ],
     colorMode: {
         classSuffix: ''
