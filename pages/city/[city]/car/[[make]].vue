@@ -1,9 +1,19 @@
 <script setup>
-
+const route = useRoute();
+const {data: cars, refresh} = await useFetch(`/api/cars/${route.params.city}`, {
+  params: {
+    min: route.query.min,
+    max: route.query.max,
+    make: route.params.make
+  }
+})
+watch(() => route.query, () => {
+  window.location.reload()
+})
 </script>
 
 <template>
   <div>
-    <CarCards/>
+    <CarCards :cars="cars"/>
   </div>
 </template>

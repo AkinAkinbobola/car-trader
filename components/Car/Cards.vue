@@ -1,5 +1,5 @@
 <script setup>
-const {cars} = useData()
+const {cars} = defineProps(['cars'])
 const savedCars = useLocalStorage('savedCars', {})
 
 const handleSavedCars = (id) => {
