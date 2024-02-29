@@ -1,11 +1,8 @@
 <script setup>
 const route = useRoute()
 const {data: car} = await useFetch(`/api/car/${route.params.id}`)
-console.log(car)
 
 const {toTitleCase} = useUtilities()
-
-
 
 if (!car.value) {
   throw createError({
