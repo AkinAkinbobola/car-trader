@@ -1,6 +1,6 @@
 <script setup>
 const route = useRoute();
-const {data: cars, refresh} = await useFetch(`/api/cars/${route.params.city}`, {
+const {data: cars} = await useFetch(`/api/cars/${route.params.city}`, {
   params: {
     min: route.query.min,
     max: route.query.max,

@@ -1,12 +1,11 @@
 <script setup>
-
 const route = useRoute()
-const {cars} = useData()
+const {data: car} = await useFetch(`/api/car/${route.params.id}`)
+console.log(car)
+
 const {toTitleCase} = useUtilities()
 
-const car = computed(() => {
-  return cars.find(car => car.id === parseInt(route.params.id))
-})
+
 
 if (!car.value) {
   throw createError({
@@ -30,5 +29,4 @@ definePageMeta({
     <CarDetailDescription :description="car.description"/>
     <CarDetailContact :car="car"/>
   </div>
-
 </template>
