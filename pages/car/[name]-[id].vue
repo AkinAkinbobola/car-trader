@@ -1,7 +1,7 @@
 <script setup>
 
 const route = useRoute()
-const {cars} = useCars()
+const {cars} = useData()
 const {toTitleCase} = useUtilities()
 
 const car = computed(() => {
