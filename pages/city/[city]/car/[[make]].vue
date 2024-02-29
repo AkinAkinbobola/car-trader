@@ -7,6 +7,7 @@ const {data: cars, refresh} = await useFetch(`/api/cars/${route.params.city}`, {
     make: route.params.make
   }
 })
+
 watch(() => route.query, () => {
   window.location.reload()
 })
@@ -14,6 +15,7 @@ watch(() => route.query, () => {
 
 <template>
   <div>
-    <CarCards :cars="cars"/>
+    <CarCards :cars="cars" v-if="cars.length"/>
+    <h1 class="text-red-600" v-else>No cars found with that filter</h1>
   </div>
 </template>
