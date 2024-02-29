@@ -17,6 +17,7 @@ const schema = Joi.object({
     name: Joi.string().required(),
     description : Joi.string().min(20).required()
 })
+
 export default defineEventHandler(async (event) => {
     const body = await readBody(event);
 
