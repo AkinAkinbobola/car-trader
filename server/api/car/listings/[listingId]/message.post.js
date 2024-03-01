@@ -6,7 +6,7 @@ const schema = Joi.object({
         minDomainSegments: 2,
         tlds: {allow: ['com', 'net']}
     }),
-    phone: Joi.string().length(11).pattern(/((^+)(234){1}[0–9]{10})|((^234)[0–9]{10})|((^0)(7|8|9){1}(0|1){1}[0–9]{8})/).required(),
+    phone: Joi.string().length(11).required(),
     name: Joi.string().required(),
     message: Joi.string().min(20).required()
 })

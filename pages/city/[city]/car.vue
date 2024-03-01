@@ -8,7 +8,7 @@ useHead({
 </script>
 
 <template>
-  <div class="mt-32 flex">
+  <div class="mt-32 flex justify-center px-16">
     <NuxtErrorBoundary>
       <CarSidebar/>
       <NuxtPage/>

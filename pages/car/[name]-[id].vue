@@ -20,7 +20,7 @@ definePageMeta({
 </script>
 
 <template>
-  <div v-if="car">
+  <div v-if="car" class="px-16">
     <CarDetailHero :car="car"/>
     <CarDetailAttributes :features="car.features"/>
     <CarDetailDescription :description="car.description"/>
