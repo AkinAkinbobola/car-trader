@@ -15,7 +15,7 @@ const schema = Joi.object({
     listerId: Joi.string().required(),
     price: Joi.number().required().min(0),
     name: Joi.string().required(),
-    description : Joi.string().min(20).required()
+    description: Joi.string().min(20).required()
 })
 
 export default defineEventHandler(async (event) => {
@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
 
     const {error, value} = schema.validate(body);
 
-    if(error){
+    if (error) {
         throw createError({
             statusCode: 412,
             statusMessage: error.message
@@ -38,11 +38,14 @@ export default defineEventHandler(async (event) => {
         features,
         description,
         listerId,
-        city
+        city,
+        model,
+        make
     } = body
 
     const car = await prisma.car.create({
         data: {
+            model,
             image,
             name,
             numberOfSeats,
@@ -51,9 +54,9 @@ export default defineEventHandler(async (event) => {
             features,
             description,
             listerId,
-            city: city.toLowerCase()
+            city: city.toLowerCase(),
+            make
         }
-    })
-
-    return car
+    });
+    return car;
 })
