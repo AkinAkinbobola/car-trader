@@ -13,8 +13,6 @@ const handleSavedCars = (id) => {
 
 <template>
   <div class="w-full" v-for="car in cars" :key="car.id">
-    <ClientOnly>
-      <CarCard :car="car" @saveCar="handleSavedCars" :saved="car.id in savedCars"/>
-    </ClientOnly>
+    <CarCard :car="car" @saveCar="handleSavedCars" :saved="car.id in savedCars"/>
   </div>
 </template>
