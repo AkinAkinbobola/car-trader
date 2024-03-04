@@ -8,7 +8,7 @@ const logout = async () => {
     return
   }
   user.value = null
-  navigateTo('/logout')
+  navigateTo('/login')
 }
 </script>
 
