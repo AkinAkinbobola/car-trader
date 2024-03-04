@@ -3,8 +3,12 @@
 definePageMeta({
   layout: "custom",
 });
-
-const { listings } = useData();
+const user = useSupabaseUser();
+const { listings } = useFetch('/api/car/listings/user/', {
+  query: {
+    userId: user.value.id,
+  },
+});
 </script>
 
 <template>
