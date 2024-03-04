@@ -80,27 +80,27 @@ const isButtonDisabled = computed(() => {
   return false
 })
 const handleSubmit = async () => {
-    const body = {
-      ...info.value,
-      features: info.value.features.split(", "),
-      numberOfSeats: parseInt(info.value.seats),
-      year: parseInt(info.value.year),
-      miles: parseInt(info.value.miles),
-      price: parseInt(info.value.price),
-      listerId: user.value.id,
-      name: info.value.make + " " + info.value.model,
-      image: "sdvdsvjksvnsd"
-    }
-    delete body.seats
-    try{
-        const response = await $fetch('/api/car/listings', {
-          method: 'POST',
-          body
-        })
-      navigateTo('/profile/listings')
-    }catch (e) {
-      errorMessage.value = e.value.statusMessage
-    }
+  const body = {
+    ...info.value,
+    features: info.value.features.split(", "),
+    numberOfSeats: parseInt(info.value.seats),
+    year: parseInt(info.value.year),
+    miles: parseInt(info.value.miles),
+    price: parseInt(info.value.price),
+    listerId: user.value.id,
+    name: info.value.make + " " + info.value.model,
+    image: "https://plus.unsplash.com/premium_photo-1676648196796-8dabd4e80d6d?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  }
+  delete body.seats
+  try {
+    const response = await $fetch('/api/car/listings', {
+      method: 'POST',
+      body
+    })
+    navigateTo('/profile/listings')
+  } catch (e) {
+    errorMessage.value = e.value.statusMessage
+  }
 }
 </script>
 
@@ -141,7 +141,7 @@ const handleSubmit = async () => {
         </button>
       </div>
       <p v-if="errorMessage" class="mt-3 text-red-400">
-        {{errorMessage}}
+        {{ errorMessage }}
       </p>
     </div>
   </div>

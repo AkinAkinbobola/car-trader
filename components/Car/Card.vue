@@ -14,7 +14,7 @@ const emit = defineEmits(['saveCar'])
     <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)"
     >
       <NuxtImg
-          :src="car.url"
+          :src="car.image"
           alt=""
           class="w-[300px] h-full"
       />
