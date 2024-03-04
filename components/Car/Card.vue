@@ -4,17 +4,20 @@ import heartOutline from '/heartOutline.png'
 
 const {car, saved} = defineProps(['car', 'saved'])
 const emit = defineEmits(['saveCar'])
+const config = useRuntimeConfig()
 </script>
 
 <template>
   <div
       class="relative shadow border w-full overflow-hidden mb-5 cursor-pointer h-[200px]"
   >
-    <img :src="saved ? heartFilled : heartOutline" class="absolute w-7 right-5 top-2 z-20" @click="emit('saveCar', car.id)"/>
+    <img :src="saved ? heartFilled : heartOutline" class="absolute w-7 right-5 top-2 z-20"
+         :alt="car.name"
+         @click="emit('saveCar', car.id)"/>
     <div class="flex h-full" @click="navigateTo(`/car/${car.name}-${car.id}`)"
     >
       <NuxtImg
-          :src="car.image"
+          :src="`${config.public.supabase.url}/storage/v1/object/public/images/${car.image}`"
           alt=""
           class="w-[300px] h-full"
       />
